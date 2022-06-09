@@ -79,8 +79,22 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
-
-
+        android:layout_margin="10dp" android:padding="5dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:text="Effacer"
+            android:id="@+id/btnEffa"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:text="Enregistrer"
+            android:id="@+id/btnSave"/>
     </LinearLayout>
 </LinearLayout>
