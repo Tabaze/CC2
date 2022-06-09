@@ -72,7 +72,7 @@ public class MyDataClimat extends SQLiteOpenHelper {
         }
         return prds;
     }
-    public static Climat getAOneProduit(SQLiteDatabase sql, int id){
+    public static Climat getOneClimat(SQLiteDatabase sql, int id){
         Climat cl = null;
         Cursor cur = sql.rawQuery("SELECT * FROM "+Table + " WHERE id="+id ,null);
         if(cur.moveToNext()){
