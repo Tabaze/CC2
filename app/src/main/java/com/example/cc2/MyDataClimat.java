@@ -1,5 +1,6 @@
 package com.example.cc2;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -29,6 +30,16 @@ public class MyDataClimat extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+        String sql = "DROP TABLE " + Table;
+        sqLiteDatabase.execSQL(sql);
+        onCreate(sqLiteDatabase);
+    }
+    public static long AddClimat(SQLiteDatabase sql, Climat cl){
+        ContentValues c = new ContentValues();
+        c.put(col2,cl.getNomVille());
+        c.put(col3,cl.getPays());
+        c.put(col4,cl.getTemperature());
+        c.put(col5,cl.getPourcentage());
+        return sql.insert(Table,null,c);
     }
 }
