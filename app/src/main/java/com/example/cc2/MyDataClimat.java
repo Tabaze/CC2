@@ -50,4 +50,7 @@ public class MyDataClimat extends SQLiteOpenHelper {
         c.put(col5,cl.getPourcentage());
         return sql.update(Table,c,"id = " + cl.getId(),null);
     }
+    public static long DeleteClimat(SQLiteDatabase sql, int id){
+        return sql.delete(Table,"id = " + id,null);
+    }
 }
