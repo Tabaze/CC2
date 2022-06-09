@@ -72,4 +72,16 @@ public class MyDataClimat extends SQLiteOpenHelper {
         }
         return prds;
     }
+    public static Climat getAOneProduit(SQLiteDatabase sql, int id){
+        Climat cl = null;
+        Cursor cur = sql.rawQuery("SELECT * FROM "+Table + " WHERE id="+id ,null);
+        if(cur.moveToNext()){
+            cl.setId(cur.getInt(0));
+            cl.setNomVille(cur.getString(1));
+            cl.setPays(cur.getString(2));
+            cl.setTemperature(cur.getInt(3));
+            cl.setPourcentage(cur.getInt(4));
+        }
+        return cl;
+    }
 }
