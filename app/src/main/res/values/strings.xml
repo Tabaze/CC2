@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">CC2</string>
+    <string name="lblVille">Ville : </string>
+    <string name="lblPay">Pays : </string>
+    <string name="lblTemperatur">Temperatur : </string>
+    <string name="c"> °C</string>
+    <string name="lblPourcentage">Pourcentage de nuage : </string>
+    <string name="po"> %</string>
 </resources>
