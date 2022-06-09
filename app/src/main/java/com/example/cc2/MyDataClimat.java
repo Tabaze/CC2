@@ -2,11 +2,14 @@ package com.example.cc2;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
 
 public class MyDataClimat extends SQLiteOpenHelper {
     public static String dbName="Climat.db";
@@ -52,5 +55,21 @@ public class MyDataClimat extends SQLiteOpenHelper {
     }
     public static long DeleteClimat(SQLiteDatabase sql, int id){
         return sql.delete(Table,"id = " + id,null);
+    }
+    public static ArrayList<Climat> getAllClimat(SQLiteDatabase sql){
+        ArrayList<Climat> prds = new ArrayList<>();
+
+        Cursor cur = sql.rawQuery("SELECT * FROM "+Table,null);
+
+        while(cur.moveToNext()){
+            Climat cl = new Climat();
+            cl.setId(cur.getInt(0));
+            cl.setNomVille(cur.getString(1));
+            cl.setPays(cur.getString(2));
+            cl.setTemperature(cur.getInt(3));
+            cl.setPourcentage(cur.getInt(4));
+            prds.add(cl);
+        }
+        return prds;
     }
 }
