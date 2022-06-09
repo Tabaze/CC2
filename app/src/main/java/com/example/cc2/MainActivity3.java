@@ -66,6 +66,7 @@ public class MainActivity3 extends AppCompatActivity {
                 cl.setPays(pays[sp.getSelectedItemPosition()]);
                 cl.setTemperature(Integer.parseInt(tem.getText().toString()));
                 cl.setPourcentage(Integer.parseInt(pou.getText().toString()));
+                MyDataClimat.AddClimat(db.getWritableDatabase(),cl);
             }
         });
     }
