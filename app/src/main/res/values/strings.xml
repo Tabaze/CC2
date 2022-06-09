@@ -6,4 +6,13 @@
     <string name="c"> °C</string>
     <string name="lblPourcentage">Pourcentage de nuage : </string>
     <string name="po"> %</string>
+
+    <string-array name="pays">
+        <item>Zambie</item>
+        <item>Lybie</item>
+        <item>Italie</item>
+        <item>Espagne</item>
+        <item>France</item>
+        <item>Canada</item>
+    </string-array>
 </resources>
