@@ -42,4 +42,12 @@ public class MyDataClimat extends SQLiteOpenHelper {
         c.put(col5,cl.getPourcentage());
         return sql.insert(Table,null,c);
     }
+    public static long UpdateClimat(SQLiteDatabase sql, Climat cl){
+        ContentValues c = new ContentValues();
+        c.put(col2,cl.getNomVille());
+        c.put(col3,cl.getPays());
+        c.put(col4,cl.getTemperature());
+        c.put(col5,cl.getPourcentage());
+        return sql.update(Table,c,"id = " + cl.getId(),null);
+    }
 }
