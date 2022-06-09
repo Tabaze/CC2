@@ -72,9 +72,9 @@ public class MyDataClimat extends SQLiteOpenHelper {
         }
         return prds;
     }
-    public static Climat getOneClimat(SQLiteDatabase sql, int id){
+    public static Climat getOneClimat(SQLiteDatabase sql, String ville){
         Climat cl = null;
-        Cursor cur = sql.rawQuery("SELECT * FROM "+Table + " WHERE id="+id ,null);
+        Cursor cur = sql.rawQuery("SELECT * FROM "+Table + " WHERE ville="+ville ,null);
         if(cur.moveToNext()){
             cl.setId(cur.getInt(0));
             cl.setNomVille(cur.getString(1));
